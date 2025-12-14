@@ -55,6 +55,10 @@ Deleted firewall rule re-enabling ICMP traffic
 <img width="910" height="582" alt="9  Delete firewall rule re-enabling ICMP traffic" src="https://github.com/user-attachments/assets/55945d2a-9838-45eb-9236-fe7385884ad7" />
 <img width="715" height="577" alt="10  The ICMP traffic is re-enabled, there are replies to requests" src="https://github.com/user-attachments/assets/35b4b744-302a-477f-a3e1-27f181a886e3" />
 
+Observerd SSH traffic of the communication between the Windows VM 10.0.0.4 and Linux VM 10.0.0.5
+<img width="856" height="733" alt="11  Using powershell to observe ssh traffic" src="https://github.com/user-attachments/assets/52655751-cda8-40c8-82d9-5b175412397a" />
+<img width="1237" height="582" alt="12  Filtered ssh tracffic in wireshark" src="https://github.com/user-attachments/assets/931eef5f-b929-4804-aaae-8eaaee905a48" />
+
 
 
 
