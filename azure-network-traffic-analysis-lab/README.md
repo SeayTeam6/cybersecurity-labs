@@ -76,6 +76,14 @@ Forced the CPU to forget its network identity/IP and then asked for a new one so
 <img width="852" height="1039" alt="13  Created batch file to force an IP reset so that DCHP conversation traffic that created a new IP could be viewed in wireshark" src="https://github.com/user-attachments/assets/cca8b8a1-a1ab-4b04-9727-16a77a015237" />
 <img width="853" height="578" alt="14  this is the DHCP traffic captured by Wireshark" src="https://github.com/user-attachments/assets/0d00abaf-baf5-459e-b001-0fecf347dd46" />
 
+## DNS
+Used the commandline to use "nslookup" to view the IP addresses of 2 sites (ESPN, Disney) and observed the corresponding network traffic in wireshark.
+
+<img width="828" height="594" alt="15  Used NSlookup for espn and disney sites to view the sites IP addresses" src="https://github.com/user-attachments/assets/d207cbb5-ad16-42ca-974f-02aefbb953ff" />
+<img width="1088" height="797" alt="16  Viewd DNS traffic from espn and disney sites" src="https://github.com/user-attachments/assets/55e82787-b4d5-44a2-a5e1-7562346f3593" />
+
+
+
 
 
 
