@@ -82,6 +82,10 @@ Used the commandline to use "nslookup" to view the IP addresses of 2 sites (ESPN
 <img width="828" height="594" alt="15  Used NSlookup for espn and disney sites to view the sites IP addresses" src="https://github.com/user-attachments/assets/d207cbb5-ad16-42ca-974f-02aefbb953ff" />
 <img width="1088" height="797" alt="16  Viewd DNS traffic from espn and disney sites" src="https://github.com/user-attachments/assets/55e82787-b4d5-44a2-a5e1-7562346f3593" />
 
+## RDP
+Observed RDP network traffic in Wireshark using tcp.port == 3389. There was an everflowing amount of traffic due to RDP being in use due to the Azure server sending traffic to the Virtual machine being used. 
+
+<img width="809" height="659" alt="17  Viewed RDP network traffic in wireshark using tcpport3389" src="https://github.com/user-attachments/assets/801610fb-c59f-465c-8b0a-b05748062f75" />
 
 
 
@@ -91,7 +95,7 @@ Used the commandline to use "nslookup" to view the IP addresses of 2 sites (ESPN
 
 
 
-## Evidence
+
 
 
 ## Skills Demonstrated
