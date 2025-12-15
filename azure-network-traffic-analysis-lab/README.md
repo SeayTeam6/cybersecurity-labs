@@ -30,7 +30,9 @@ Connected to the Windows VM via RDP and used Wireshark to capture and analyze:
 - Started packet capture within Wireshark and filtered for only ICMP traffic.
 - 
 - <img width="748" height="579" alt="3  Filtered for Icmp traffic in Wireshark inside VM" src="https://github.com/user-attachments/assets/33609888-fc2c-432a-9a78-ea5e648f005e" />
-From the Windows VM I pinged the Linux VM using Powershell. The ICMP filter in Wireshark displayed the ICMP/Ping reply traffic from the Ubuntu Linux Vm.
+
+## From the Windows VM I pinged the Linux VM using Powershell. The ICMP filter in Wireshark displayed the ICMP/Ping reply traffic from the Ubuntu Linux Vm.
+
 <img width="840" height="729" alt="4  Used powershell to ping the linuxvm" src="https://github.com/user-attachments/assets/b6f70e61-842d-4d5e-8a9e-47fd1a91a84c" />
 
 <img width="1052" height="579" alt="5  The ICMP ping traffic reply from the linux vm" src="https://github.com/user-attachments/assets/3ad78e8c-0619-4a92-a6da-723b5d31622c" />
