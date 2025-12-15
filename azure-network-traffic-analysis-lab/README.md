@@ -52,7 +52,9 @@ Configured Network Security Group (NSG) rules to block inbound ICMP traffic to t
 ## Opened the Network Security Group in Azure, located the Inbound Security Rules (Firewall) for the Linux VM and disabled incoming (inbound) ICMP traffic
 
 <img width="906" height="929" alt="7  Added a firewall rule to deny traffic" src="https://github.com/user-attachments/assets/5e1daa97-8daa-40f4-8599-85b87048d39d" />
-Linux VM 10.0.0.5 firewall rule has blocked ping to Windows VM 10.0.0.4
+
+## Linux VM 10.0.0.5 firewall rule has blocked ping to Windows VM 10.0.0.4
+
 <img width="1052" height="578" alt="8  Linux Firewall rule has blocked responses to windows VM" src="https://github.com/user-attachments/assets/8602e678-e8da-4281-ad78-b16f093fc7f0" />
 
 ## Deleted firewall rule, re-enabling ICMP traffic
