@@ -1,6 +1,6 @@
 ## OS Ticket
 
-## Step 1
+## Step 1 - Resolving Ticket 1 
 I deployed the Azure Windows virtual machine. Once open, I installed and configured Internet Informations Services (IIS) with the required IIS modules, 
 and MySQL so that OS Ticket can properly function. This also included enabling PHP extensions, and configuring file permissions. I also created the Os Ticket database using Heidi SQL
 and connected it to the application during the online setup. Finally, I setup the environment in OS Ticket as a fully functioning organization. Help topics, Service Level agreements (SLA), 
@@ -28,3 +28,8 @@ Agents, Users, and Departments, were created within OS Ticket with all of their 
 
 ## Ticket has been resloved
 <img width="1116" height="483" alt="8  Ticket resolved" src="https://github.com/user-attachments/assets/4d9e48f7-aaed-4dee-add9-f79b51fd1789" />
+
+## Resolving Ticket 2
+Second mock ticket being viewed by Support  Agent Ben of end-user Kendall having issues with the Abode software. 
+<img width="954" height="630" alt="9  Second mock ticket of an issue with the adobe systems" src="https://github.com/user-attachments/assets/f935fb36-318a-4299-8a71-d4ce2f63fb40" />
+
