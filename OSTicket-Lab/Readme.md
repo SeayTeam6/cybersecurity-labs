@@ -1,6 +1,6 @@
 ## OS Ticket
 
-## Step 1 - Resolving Ticket 1 
+## Step 1
 I deployed the Azure Windows virtual machine. Once open, I installed and configured Internet Informations Services (IIS) with the required IIS modules, 
 and MySQL so that OS Ticket can properly function. This also included enabling PHP extensions, and configuring file permissions. I also created the Os Ticket database using Heidi SQL
 and connected it to the application during the online setup. Finally, I setup the environment in OS Ticket as a fully functioning organization. Help topics, Service Level agreements (SLA), 
@@ -10,8 +10,9 @@ Agents, Users, and Departments, were created within OS Ticket with all of their 
 <img width="952" height="349" alt="3  Set Up Agent accounts within the company with roles and permissions" src="https://github.com/user-attachments/assets/3526fa08-3f8f-4d9a-88de-cc209cf947b6" />
 <img width="954" height="317" alt="4  Set up departments within company" src="https://github.com/user-attachments/assets/f249faa4-a7f0-4c1f-a9c0-d1c45bcaa41e" />
 
-## Step 2
+## Step 2 - Resolving Tickets
 
+## Ticket 1
 ## Created a mock service ticket from end user Georgia and viewed it as support agent Ben. 
 
 <img width="955" height="641" alt="5  Created a mock Service ticket from end-user Georgia and am viewing it as the Support agent Ben" src="https://github.com/user-attachments/assets/b790b31e-66e8-4843-b819-60f6b7f78832" />
