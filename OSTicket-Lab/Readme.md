@@ -13,7 +13,7 @@ Agents, Users, and Departments, were created within OS Ticket with all of their 
 ## Step 2 - Resolving Tickets
 
 ## Ticket 1
-## Created a mock service ticket from end user Georgia and viewed it as support agent Ben. 
+## Created a mock service ticket #808686 from end user Georgia and viewed it as support agent Ben. 
 
 <img width="955" height="641" alt="5  Created a mock Service ticket from end-user Georgia and am viewing it as the Support agent Ben" src="https://github.com/user-attachments/assets/b790b31e-66e8-4843-b819-60f6b7f78832" />
 
@@ -31,6 +31,20 @@ Agents, Users, and Departments, were created within OS Ticket with all of their 
 <img width="1116" height="483" alt="8  Ticket resolved" src="https://github.com/user-attachments/assets/4d9e48f7-aaed-4dee-add9-f79b51fd1789" />
 
 ## Ticket 2
-## Second mock ticket being viewed by Support  Agent Ben of end-user Kendall having issues with the Abode software. 
+## Second mock ticket #586223 being viewed by Support  Agent Ben of end-user Kendall having issues with the Abode software. 
 <img width="954" height="630" alt="9  Second mock ticket of an issue with the adobe systems" src="https://github.com/user-attachments/assets/f935fb36-318a-4299-8a71-d4ce2f63fb40" />
+
+## Ticket Resolved 
+<img width="953" height="950" alt="10  Ticket resolved" src="https://github.com/user-attachments/assets/c86ffcc7-1659-470a-a56d-3050c4a589d2" />
+
+## Ticket 3
+## Third mock ticket #246431 viewed by support agent Ben where the end-user Georgia reports a problem that consists of the Adobe Reader software not working. Ben sets the SLA plan and changes the priority to "High" as this software is needed for an audit that's happening soon. Ben responds to the ticket, acknowledging the issue with a plan to investigate. 
+<img width="948" height="881" alt="12  New mock ticket of end user having issue and support responding with a plan to mitigate" src="https://github.com/user-attachments/assets/0e793b36-69e2-4776-ab68-6756deda3464" />
+<img width="960" height="832" alt="13  Mock ticket solved" src="https://github.com/user-attachments/assets/e8a627b4-6282-4678-9923-fe16b123c176" />
+<img width="1113" height="402" alt="14  Ticket closed" src="https://github.com/user-attachments/assets/8adb1b01-3354-4e22-959a-48d5e1002897" />
+
+
+
+
+
 
