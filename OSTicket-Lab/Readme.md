@@ -43,6 +43,11 @@ Agents, Users, and Departments, were created within OS Ticket with all of their 
 <img width="960" height="832" alt="13  Mock ticket solved" src="https://github.com/user-attachments/assets/e8a627b4-6282-4678-9923-fe16b123c176" />
 <img width="1113" height="402" alt="14  Ticket closed" src="https://github.com/user-attachments/assets/8adb1b01-3354-4e22-959a-48d5e1002897" />
 
+## Ticket 4 
+## Fourth mock ticket 
+## End user has a printer issue and Support Agent Ben analysis the problem, detects the problem, and resloves it. An update was sent throughout the process along with communication with the end-user in an outside chat. 
+<img width="951" height="948" alt="15  New ticket updated solved and closed" src="https://github.com/user-attachments/assets/570b3660-8f6c-4418-9e49-213eca7a7818" />
+
 
 
 
