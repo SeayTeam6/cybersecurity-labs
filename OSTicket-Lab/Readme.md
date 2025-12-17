@@ -25,3 +25,6 @@ Agents, Users, and Departments, were created within OS Ticket with all of their 
 ## Brittany then performed a root cause analysis and resolved the issue, updating the ticket throughout the process.
 
 <img width="951" height="892" alt="7  Brittany in online banking has now done root analysis on the issue and solves it, udating the ticket throughout the process" src="https://github.com/user-attachments/assets/9e8fc539-3fe4-4761-b470-a8a3c5b3f57a" />
+
+## Ticket has been resloved
+<img width="1116" height="483" alt="8  Ticket resolved" src="https://github.com/user-attachments/assets/4d9e48f7-aaed-4dee-add9-f79b51fd1789" />
