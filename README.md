@@ -5,3 +5,4 @@ Hands-on labs from Cybrary SOC Analyst and Security+ training, including SIEM da
 
 [Azure Network Traffic Analysis & Firewall Configuration Lab](azure-network-traffic-analysis-lab/)
 
+[OS Ticket Lab - Enviornment Setup](OSTicket-Lab)
