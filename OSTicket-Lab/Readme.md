@@ -1,6 +1,6 @@
 ## OS Ticket
 
-## Step 1
+## Step 1 - Setting up the OsTicket environment 
 I deployed the Azure Windows virtual machine. Once open, I installed and configured Internet Informations Services (IIS) with the required IIS modules, 
 and MySQL so that OS Ticket can properly function. This also included enabling PHP extensions, and configuring file permissions. I also created the Os Ticket database using Heidi SQL
 and connected it to the application during the online setup. Finally, I setup the environment in OS Ticket as a fully functioning organization. Help topics, Service Level agreements (SLA), 
