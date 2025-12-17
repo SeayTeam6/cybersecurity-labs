@@ -31,6 +31,6 @@ Agents, Users, and Departments, were created within OS Ticket with all of their 
 <img width="1116" height="483" alt="8  Ticket resolved" src="https://github.com/user-attachments/assets/4d9e48f7-aaed-4dee-add9-f79b51fd1789" />
 
 ## Ticket 2
-Second mock ticket being viewed by Support  Agent Ben of end-user Kendall having issues with the Abode software. 
+## Second mock ticket being viewed by Support  Agent Ben of end-user Kendall having issues with the Abode software. 
 <img width="954" height="630" alt="9  Second mock ticket of an issue with the adobe systems" src="https://github.com/user-attachments/assets/f935fb36-318a-4299-8a71-d4ce2f63fb40" />
 
