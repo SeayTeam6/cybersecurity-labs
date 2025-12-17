@@ -38,7 +38,7 @@ Agents, Users, and Departments, were created within OS Ticket with all of their 
 <img width="953" height="950" alt="10  Ticket resolved" src="https://github.com/user-attachments/assets/c86ffcc7-1659-470a-a56d-3050c4a589d2" />
 
 ## Ticket 3
-## Third mock ticket #246431 viewed by support agent Ben where the end-user Georgia reports a problem that consists of the Adobe Reader software not working. Ben sets the SLA plan and changes the priority to "High" as this software is needed for an audit that's happening soon. Ben responds to the ticket, acknowledging the issue with a plan to investigate. The ticket is investigated, solved, and closed.
+## Third mock ticket #246431 viewed by Randall where the end-user Georgia reports a problem that consists of the Adobe Reader software not working. Randall sets the SLA plan and changes the priority to "High" as this software is needed for an audit that's happening soon. Ben responds to the ticket, acknowledging the issue with a plan to investigate. The ticket is investigated, solved, and closed.
 <img width="948" height="881" alt="12  New mock ticket of end user having issue and support responding with a plan to mitigate" src="https://github.com/user-attachments/assets/0e793b36-69e2-4776-ab68-6756deda3464" />
 <img width="960" height="832" alt="13  Mock ticket solved" src="https://github.com/user-attachments/assets/e8a627b4-6282-4678-9923-fe16b123c176" />
 <img width="1113" height="402" alt="14  Ticket closed" src="https://github.com/user-attachments/assets/8adb1b01-3354-4e22-959a-48d5e1002897" />
