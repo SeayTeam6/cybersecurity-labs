@@ -3,3 +3,30 @@ Created a  resource group, virtual network, and subnet in Azure, followed that u
 <img width="526" height="546" alt="1  Turned off firewalls in domain VM" src="https://github.com/user-attachments/assets/6cbed85a-dcd9-47da-b589-ad1d1e624041" />
 <img width="780" height="458" alt="2  Set Client VM DNS settings to the Domain VMs private address" src="https://github.com/user-attachments/assets/d574b3d8-7797-46cd-9751-d2232c62db43" />
 <img width="858" height="701" alt="3  Pinged Domain server from client" src="https://github.com/user-attachments/assets/860e1eb3-df67-4f84-8dad-1c4cc06e95e8" />
+## Installing Active Directory
+Logged into the domain server virtual machine and installed the Active Directory Domain Services role. After installation, I promoted the server to a domain controller by creating a new forest named mydomain.com. Once the configuration completed, I restarted the machine and logged back in using the domain account mydomain.com\labuser.
+
+## Start menu, Server Manager
+
+<img width="858" height="724" alt="4  go to the domain server press start menu and click server manager" src="https://github.com/user-attachments/assets/cca9644f-34e5-4707-90bf-79ef1d4fae9b" />
+
+## Add Roles and Features
+
+<img width="574" height="279" alt="5  Add roles and features" src="https://github.com/user-attachments/assets/0ba0b58f-ce61-4f02-8286-9107951a7b75" />
+
+## Click next twice, then choose Active Directory Domain Services. Click next until asked to install and install.
+<img width="783" height="561" alt="6  Active directory domain services" src="https://github.com/user-attachments/assets/8c4f60eb-efba-46e5-bb18-c822b6a712cc" />
+
+## Click the yellow flag in the top right and select "Promote this server to a domain controller"
+
+<img width="647" height="325" alt="7  Click the flag in the top right and click promote this server to  a domain controller" src="https://github.com/user-attachments/assets/ac766924-55a1-47a6-b5c2-ad5c53c24c08" />
+
+## Select "Add a new forest" and then type in the domain name
+<img width="757" height="553" alt="8  Add a new forest and type in the domains name" src="https://github.com/user-attachments/assets/60722f51-6919-40d2-9ddd-913d3794507d" />
+
+
+
+
+
+
+
