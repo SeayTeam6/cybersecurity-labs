@@ -21,8 +21,14 @@ Logged into the domain server virtual machine and installed the Active Directory
 
 <img width="647" height="325" alt="7  Click the flag in the top right and click promote this server to  a domain controller" src="https://github.com/user-attachments/assets/ac766924-55a1-47a6-b5c2-ad5c53c24c08" />
 
-## Select "Add a new forest" and then type in the domain name
+## Select "Add a new forest" and then type in the domain name, Next
 <img width="757" height="553" alt="8  Add a new forest and type in the domains name" src="https://github.com/user-attachments/assets/60722f51-6919-40d2-9ddd-913d3794507d" />
+
+## Create and enter a password, Continue to click next as nothing else will be needed to be added or clicked and install. The VM will restart once install is complete.
+<img width="757" height="558" alt="9  create and enter a password" src="https://github.com/user-attachments/assets/db6d1136-3ddb-4343-a597-93db67fad09b" />
+
+
+
 
 
 
