@@ -39,7 +39,7 @@ Logged into the domain server virtual machine and installed the Active Directory
 ## Repeat last step but type in _ADMINS and click OK
 <img width="752" height="527" alt="13  Repeat last step and type in ADMINS" src="https://github.com/user-attachments/assets/60eee859-39aa-4895-9a2d-5a351ba2d742" />
 
-## Create a new user in the _ADMINS folder Adding the name and creating a username
+## Create a new user in the _ADMINS folder Adding the name and creating a username by right clicking _ADMINS
 <img width="756" height="611" alt="14  Created a new user in admins" src="https://github.com/user-attachments/assets/224292fd-e691-4670-9fe6-b48a0c67e593" />
 <img width="751" height="528" alt="15  Created a new user in admins  2" src="https://github.com/user-attachments/assets/406690bf-9898-4ae3-8dbd-8521963285a5" />
 
