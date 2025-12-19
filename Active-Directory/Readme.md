@@ -59,6 +59,11 @@ Logged into the domain server virtual machine and installed the Active Directory
 <img width="308" height="613" alt="20  Login into CLient-1 vm and right click start menu and click system" src="https://github.com/user-attachments/assets/93b4c7a7-40f9-48c7-a6e6-3b3bbc95f7be" />
 <img width="1213" height="508" alt="21   Click rename this pc advanced then under computer name chick change" src="https://github.com/user-attachments/assets/c03c613c-e906-4d72-8c6b-cd2e87fb5284" />
 
+## This is where the you are joining the client into the Domain. Click domain and type in "mydomain.com"
+<img width="411" height="422" alt="22  joining the client into the Domain Click domain and type in mydomaincom" src="https://github.com/user-attachments/assets/8f65876a-d1f1-47b5-bfb1-f574ce632a2c" />
+
+
+
 
 
 
