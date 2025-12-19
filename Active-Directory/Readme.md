@@ -49,11 +49,15 @@ Logged into the domain server virtual machine and installed the Active Directory
 ## We need to make this user an Admin by right clicking the users name and clicking "Properties" "Member Of" 
 <img width="750" height="835" alt="17  Right click username, member of, Add" src="https://github.com/user-attachments/assets/dbd0610e-f69c-407e-a80d-9f5049f03fdd" />
 
-## Type in "Domain Admins" click "Check Group" click OK, APPLY, OK
+## Type in "Domain Admins" click "Check Group" click OK, APPLY, OK. Now logout
 <img width="752" height="837" alt="18  Type in Domain Admins, Check names, Then OK" src="https://github.com/user-attachments/assets/a7c5a992-0709-49ae-8b88-ccc2ea020855" />
 
+## Now sign in as the new Admin Account that was just created
+<img width="463" height="435" alt="19  Login as the new admin account" src="https://github.com/user-attachments/assets/c7063b75-9644-4776-be0e-448160260dae" />
 
-
+## Log into the CLIENT1 VM right click "Start Menu" and click "System" Click Rename this pc advanced then under "computer name" chick "change"
+<img width="308" height="613" alt="20  Login into CLient-1 vm and right click start menu and click system" src="https://github.com/user-attachments/assets/93b4c7a7-40f9-48c7-a6e6-3b3bbc95f7be" />
+<img width="1213" height="508" alt="21   Click rename this pc advanced then under computer name chick change" src="https://github.com/user-attachments/assets/c03c613c-e906-4d72-8c6b-cd2e87fb5284" />
 
 
 
