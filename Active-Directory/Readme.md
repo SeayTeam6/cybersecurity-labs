@@ -62,6 +62,11 @@ Logged into the domain server virtual machine and installed the Active Directory
 ## This is where the you are joining the client into the Domain. Click domain and type in "mydomain.com"
 <img width="411" height="422" alt="22  joining the client into the Domain Click domain and type in mydomaincom" src="https://github.com/user-attachments/assets/8f65876a-d1f1-47b5-bfb1-f574ce632a2c" />
 
+## Enter the username and password of the Admin account, press ok and allow the VM to restart. This user is now added to the Domain.
+<img width="455" height="300" alt="23  Enter the admins username and password and OK then restart" src="https://github.com/user-attachments/assets/42aa0773-da54-43f8-b200-41ad1dcda2bb" />
+<img width="299" height="151" alt="24  Admin is now added to the domain" src="https://github.com/user-attachments/assets/0113fa73-2c02-4cc0-ab77-43864c9e7aea" />
+
+
 
 
 
