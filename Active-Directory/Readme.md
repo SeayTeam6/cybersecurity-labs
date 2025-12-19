@@ -27,6 +27,16 @@ Logged into the domain server virtual machine and installed the Active Directory
 ## Create and enter a password, Continue to click next as nothing else will be needed to be added or clicked and install. The VM will restart once install is complete.
 <img width="757" height="558" alt="9  create and enter a password" src="https://github.com/user-attachments/assets/db6d1136-3ddb-4343-a597-93db67fad09b" />
 
+## Once installed, allow the restart and log back into the VM using Remote Desktop. Be sure to add "mydomain.com\(Your username)" as the Username. Click "Start" and search for "Active Directory Users and Computers"
+<img width="1280" height="723" alt="10  Active directory Users and computers" src="https://github.com/user-attachments/assets/3c1f6fa1-52c9-4144-b55f-2e788719b2fe" />
+
+## Right click "Mydomain.com", then "New', then "Organizational Unit"
+<img width="755" height="529" alt="11  File New Organizational Unit" src="https://github.com/user-attachments/assets/07721769-b375-4090-8757-3a4916c9f259" />
+
+
+
+
+
 
 
 
