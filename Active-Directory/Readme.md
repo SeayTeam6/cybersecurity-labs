@@ -43,11 +43,14 @@ Logged into the domain server virtual machine and installed the Active Directory
 <img width="756" height="611" alt="14  Created a new user in admins" src="https://github.com/user-attachments/assets/224292fd-e691-4670-9fe6-b48a0c67e593" />
 <img width="751" height="528" alt="15  Created a new user in admins  2" src="https://github.com/user-attachments/assets/406690bf-9898-4ae3-8dbd-8521963285a5" />
 
+## Create a password
+<img width="747" height="526" alt="16  Create a Password" src="https://github.com/user-attachments/assets/dce1b4e9-bd1c-4ce9-baf6-4b68a50827f1" />
 
+## We need to make this user an Admin by right clicking the users name and clicking "Properties" "Member Of" 
+<img width="750" height="835" alt="17  Right click username, member of, Add" src="https://github.com/user-attachments/assets/dbd0610e-f69c-407e-a80d-9f5049f03fdd" />
 
-
-
-
+## Type in "Domain Admins" click "Check Group" click OK, APPLY, OK
+<img width="752" height="837" alt="18  Type in Domain Admins, Check names, Then OK" src="https://github.com/user-attachments/assets/a7c5a992-0709-49ae-8b88-ccc2ea020855" />
 
 
 
