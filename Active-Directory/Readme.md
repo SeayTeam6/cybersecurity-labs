@@ -66,14 +66,8 @@ Logged into the domain server virtual machine and installed the Active Directory
 <img width="455" height="300" alt="23  Enter the admins username and password and OK then restart" src="https://github.com/user-attachments/assets/42aa0773-da54-43f8-b200-41ad1dcda2bb" />
 <img width="299" height="151" alt="24  Admin is now added to the domain" src="https://github.com/user-attachments/assets/0113fa73-2c02-4cc0-ab77-43864c9e7aea" />
 
-
-
-
-
-
-
-
-
+## Go back to the DC-1 User VM and go to "Active Directory Users and Computers". Make a new organizational Unit and name it _CLIENTS. Click "Computers" and see clients inside of that folder. Drag it to the new  _CLIENTS folder you just created 
+<img width="753" height="527" alt="25  make a new organizational unit in dc1 users and computers drag clients computers to new client folder" src="https://github.com/user-attachments/assets/d8532513-937b-43f6-9be4-11b4bae58082" />
 
 
 
