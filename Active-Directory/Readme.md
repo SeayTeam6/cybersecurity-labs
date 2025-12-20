@@ -69,6 +69,27 @@ Logged into the domain server virtual machine and installed the Active Directory
 ## Go back to the DC-1 User VM and go to "Active Directory Users and Computers". Make a new organizational Unit and name it _CLIENTS. Click "Computers" and see clients inside of that folder. Drag it to the new  _CLIENTS folder you just created 
 <img width="753" height="527" alt="25  make a new organizational unit in dc1 users and computers drag clients computers to new client folder" src="https://github.com/user-attachments/assets/d8532513-937b-43f6-9be4-11b4bae58082" />
 
+## Log into the CLIENT VM as the admin user
+<img width="408" height="489" alt="26  log into the CLIENT vm as the admin user" src="https://github.com/user-attachments/assets/8641e28d-81a9-4e95-8dad-ee9261e9319c" />
+
+## Start Menu, System, Remote Desktop
+<img width="866" height="877" alt="27  Start System Remote desktop" src="https://github.com/user-attachments/assets/f87e1a7f-3428-4f33-b954-0b288923024b" />
+<img width="972" height="688" alt="28  Select users that can remotely access this pc" src="https://github.com/user-attachments/assets/3b205ad6-3244-4347-b404-fdba334625f8" />
+
+## type in domain users then click check names.Press ok. This step makes all users a member of this domain and will be permitted to log in to this computer. 
+<img width="665" height="533" alt="29  type in domain users then check names" src="https://github.com/user-attachments/assets/0660c5c4-9f4c-4588-b6fa-e6ac9d057cca" />
+
+## Here we will create additional users and log into client-1 with one of the users. 
+
+## Log Into the DC-1 Domain Controller VM, Start Menu, and Run Powershell ISE as administrator. Create a new file and paste the content script of users.
+<img width="793" height="595" alt="30  Open Powershell ISE as administrator in DC1 and paste script" src="https://github.com/user-attachments/assets/8838e600-8566-4a38-805f-75369e8befa0" />
+
+
+
+
+
+
+
 
 
 
