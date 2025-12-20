@@ -84,6 +84,20 @@ Logged into the domain server virtual machine and installed the Active Directory
 ## Log Into the DC-1 Domain Controller VM, Start Menu, and Run Powershell ISE as administrator. Create a new file and paste the content script of users.
 <img width="793" height="595" alt="30  Open Powershell ISE as administrator in DC1 and paste script" src="https://github.com/user-attachments/assets/8838e600-8566-4a38-805f-75369e8befa0" />
 
+##  Press the play/start button and allow the script to run to create 1000 users
+<img width="798" height="599" alt="31  Press the play start button and allow the script to run to create 1000 users" src="https://github.com/user-attachments/assets/42e8a7c6-22fe-4df5-a398-a4b94de42d8a" />
+
+# Go to Active Directory Users and Computers. Drop down "mydomain.com" and select an employee account in the _EMPLOYEES folder.
+<img width="749" height="599" alt="32  choose an employee that was created by the script" src="https://github.com/user-attachments/assets/aa5f47f7-b119-48b2-bafc-320bfccd1440" />
+
+## Use that employee account to log into CLIENT1
+<img width="409" height="497" alt="33  Log into the CLIENT1 with one of the created accounts" src="https://github.com/user-attachments/assets/8154dc97-22db-44a4-bc0d-409c133d0b9f" />
+<img width="471" height="486" alt="34  Log into the CLIENT1 with one of the created accounts" src="https://github.com/user-attachments/assets/e1c3089f-7688-4592-9e2e-a56754e17fff" />
+
+## New user that was created by the script (ban.wel) is successfully logged in. 
+<img width="611" height="443" alt="35  ban wel is succesfully logged in" src="https://github.com/user-attachments/assets/921bd09f-736d-46c4-84af-9b06b260045c" />
+
+
 
 
 
