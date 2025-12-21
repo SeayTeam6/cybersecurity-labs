@@ -8,3 +8,5 @@ Hands-on labs from Cybrary SOC Analyst and Security+ training, including SIEM da
 [OS Ticket Lab - Enviornment Setup and Ticket Resolution](OSTicket-Lab)
 
 [Active Directory Lab](Active-Directory)
+
+[DNS](DNS)
