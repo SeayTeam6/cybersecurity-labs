@@ -130,9 +130,12 @@ Logged into the domain server virtual machine and installed the Active Directory
 
 
 
+
+
+
 # Active Directory Azure Lab
 
-This lab demonstrates how to deploy and configure an Active Directory domain in Microsoft Azure. Active Directory (AD) is a system used to manage users, computers, and resources in a network. In this lab, we will create a domain controller, join a client computer to the domain, create users and organizational units, and apply security settings. Each step includes explanations so that even someone unfamiliar with AD or Azure can understand the purpose and process.
+This lab demonstrates how to deploy and configure an Active Directory domain in Microsoft Azure. Active Directory (AD) is a system used to manage users, computers, and resources in a network. In this lab, we create a domain controller, join a client computer to the domain, create users and organizational units, and apply security settings. Each step includes explanations and instructions so even someone unfamiliar with AD or Azure can follow along.
 
 ---
 
@@ -154,138 +157,126 @@ This lab demonstrates how to deploy and configure an Active Directory domain in 
 ## 1. Azure Environment Setup
 
 **Explanation:**  
-Before we can use Active Directory, we need a virtual environment in the cloud. A resource group in Azure is a container for all the resources we will create, like virtual networks and virtual machines (VMs). A virtual network acts like a private network in Azure where our servers and clients can communicate. Assigning a static IP ensures that the domain server always has the same address, which is important for DNS resolution. Disabling the firewall temporarily allows us to test connectivity.
+Before using Active Directory, we need a virtual environment in Azure. A resource group is a container for resources like virtual networks and virtual machines (VMs). A virtual network allows our servers and clients to communicate privately. Assigning a static IP ensures the domain server always has the same address, which is critical for DNS resolution. Temporarily disabling the firewall allows us to test connectivity.
 
 **Instructions:**  
-Created a resource group, virtual network, and subnet in Azure. Deployed a Windows Server VM as the domain server, assigned it a static private IP, and disabled the firewall for testing connectivity. Deployed a second Windows VM as the client in the same region and virtual network. Configured its DNS settings to point to the domain server's private IP. Restarted the client and verified connectivity by pinging the domain server and checking DNS in PowerShell.
+Create a resource group, virtual network, and subnet in Azure. Deploy a Windows Server VM as the domain server, assign a static private IP, and disable the firewall for connectivity testing. Deploy a second Windows VM as the client in the same region and network. Configure its DNS to point to the domain server's private IP. Restart the client and verify connectivity by pinging the domain server and checking DNS in PowerShell.
 
-![1  Turned off firewalls in domain VM](https://github.com/user-attachments/assets/6cbed85a-dcd9-47da-b589-ad1d1e624041)
-![2  Set Client VM DNS settings to the Domain VMs private address](https://github.com/user-attachments/assets/d574b3d8-7797-46cd-9751-d2232c62db43)
-![3  Pinged Domain server from client](https://github.com/user-attachments/assets/860e1eb3-df67-4f84-8dad-1c4cc06e95e8)
+![1  Turned off firewalls in domain VM](https://github.com/user-attachments/assets/6cbed85a-dcd9-47da-b589-ad1d1e624041)  
+*Check that the firewall is off to allow connectivity testing.*
+
+![2  Set Client VM DNS settings to the Domain VMs private address](https://github.com/user-attachments/assets/d574b3d8-7797-46cd-9751-d2232c62db43)  
+*Set the DNS server on the client VM to the domain server's private IP.*
+
+![3  Pinged Domain server from client](https://github.com/user-attachments/assets/860e1eb3-df67-4f84-8dad-1c4cc06e95e8)  
+*Ping the domain server from the client to confirm connectivity.*
 
 ---
 
 ## 2. Installing Active Directory
 
 **Explanation:**  
-Active Directory Domain Services (AD DS) is the component that allows you to create a domain, which is a centralized way to manage users and computers. A domain controller (DC) is the server that holds the directory database and handles authentication requests. A forest is the top-level container for one or more domains. By installing AD DS and promoting the server to a domain controller, we are creating the main server that will manage users and computers in this lab.
+Active Directory Domain Services (AD DS) allows you to create a domain for centralized management of users and computers. A domain controller (DC) stores the directory database and handles authentication requests. A forest is the top-level container for one or more domains. Installing AD DS and promoting the server to a DC establishes the main server for managing users and computers.
 
 **Instructions:**  
-Logged into the domain server VM and installed the Active Directory Domain Services role. Promoted the server to a domain controller and created a new forest named `mydomain.com`. Restarted the server and logged in using the domain account `mydomain.com\labuser`.
+Log into the domain server VM and install the Active Directory Domain Services role. Promote the server to a domain controller and create a new forest named `mydomain.com`. Restart the server and log in using `mydomain.com\labuser`.
 
-### Start menu, Server Manager
-![4  go to the domain server press start menu and click server manager](https://github.com/user-attachments/assets/cca9644f-34e5-4707-90bf-79ef1d4fae9b)
+### Start Menu, Server Manager
+![4  go to the domain server press start menu and click server manager](https://github.com/user-attachments/assets/cca9644f-34e5-4707-90bf-79ef1d4fae9b)  
+*Open Server Manager from the Start menu to begin installing roles.*
 
 ### Add Roles and Features
-![5  Add roles and features](https://github.com/user-attachments/assets/0ba0b58f-ce61-4f02-8286-9107951a7b75)
+![5  Add roles and features](https://github.com/user-attachments/assets/0ba0b58f-ce61-4f02-8286-9107951a7b75)  
+*Click "Add Roles and Features" to start the wizard for installing AD DS.*
 
 ### Active Directory Domain Services Installation
-![6  Active directory domain services](https://github.com/user-attachments/assets/8c4f60eb-efba-46e5-bb18-c822b6a712cc)
+![6  Active directory domain services](https://github.com/user-attachments/assets/8c4f60eb-efba-46e5-bb18-c822b6a712cc)  
+*Select Active Directory Domain Services and continue through the wizard.*
 
 ### Promote to Domain Controller
-![7  Click the flag in the top right and click promote this server to  a domain controller](https://github.com/user-attachments/assets/ac766924-55a1-47a6-b5c2-ad5c53c24c08)
-![8  Add a new forest and type in the domains name](https://github.com/user-attachments/assets/60722f51-6919-40d2-9ddd-913d3794507d)
-![9  create and enter a password](https://github.com/user-attachments/assets/db6d1136-3ddb-4343-a597-93db67fad09b)
+![7  Click the flag in the top right and click promote this server to  a domain controller](https://github.com/user-attachments/assets/ac766924-55a1-47a6-b5c2-ad5c53c24c08)  
+*Click the notification flag and select "Promote this server to a domain controller".*
+
+![8  Add a new forest and type in the domains name](https://github.com/user-attachments/assets/60722f51-6919-40d2-9ddd-913d3794507d)  
+*Choose "Add a new forest" and enter the domain name `mydomain.com`.*
+
+![9  create and enter a password](https://github.com/user-attachments/assets/db6d1136-3ddb-4343-a597-93db67fad09b)  
+*Enter a Directory Services Restore Mode (DSRM) password and proceed with the installation. The server will restart.*
 
 ---
 
 ## 3. Active Directory Users and Organizational Units
 
 **Explanation:**  
-Organizational Units (OUs) are containers within a domain that help organize users, groups, and computers. They allow administrators to apply policies to specific sets of users or computers. In this lab, `_EMPLOYEES` will hold regular users, and `_ADMINS` will hold administrative accounts. This structure makes management easier and reflects common practices in professional environments.
+Organizational Units (OUs) are containers that help organize users, groups, and computers. They allow policies to be applied to specific groups. `_EMPLOYEES` will hold standard users, and `_ADMINS` will hold administrative accounts. This structure mirrors common practices in professional IT environments.
 
 **Instructions:**  
-Opened Active Directory Users and Computers. Right-clicked `Mydomain.com` → New → Organizational Unit. Created `_EMPLOYEES` for standard users and `_ADMINS` for administrative users.
+Open Active Directory Users and Computers. Right-click `Mydomain.com` → New → Organizational Unit. Create `_EMPLOYEES` and `_ADMINS`.
 
-![10  Active directory Users and computers](https://github.com/user-attachments/assets/3c1f6fa1-52c9-4144-b55f-2e788719b2fe)
-![11  File New Organizational Unit](https://github.com/user-attachments/assets/07721769-b375-4090-8757-3a4916c9f259)
-![12  Type in Employees](https://github.com/user-attachments/assets/a844551c-ccb7-40bc-b961-d74d5f76215f)
-![13  Repeat last step and type in ADMINS](https://github.com/user-attachments/assets/60eee859-39aa-4895-9a2d-5a351ba2d742)
+![10  Active directory Users and computers](https://github.com/user-attachments/assets/3c1f6fa1-52c9-4144-b55f-2e788719b2fe)  
+*Open ADUC to view the domain and manage users.*
+
+![11  File New Organizational Unit](https://github.com/user-attachments/assets/07721769-b375-4090-8757-3a4916c9f259)  
+*Right-click the domain and select New → Organizational Unit.*
+
+![12  Type in Employees](https://github.com/user-attachments/assets/a844551c-ccb7-40bc-b961-d74d5f76215f)  
+*Create the `_EMPLOYEES` OU for standard users.*
+
+![13  Repeat last step and type in ADMINS](https://github.com/user-attachments/assets/60eee859-39aa-4895-9a2d-5a351ba2d742)  
+*Create the `_ADMINS` OU for administrative users.*
 
 ---
 
 ## 4. Admin User Creation
 
 **Explanation:**  
-Creating a user in Active Directory allows that user to log in and access domain resources. Admin accounts have higher privileges and can manage the domain. Adding a user to the Domain Admins group gives them administrative rights across the domain. This demonstrates user management and privilege assignment.
+Creating a domain admin account allows management of the domain and its resources. Adding the user to the Domain Admins group gives full administrative rights. This demonstrates how privileges are assigned and managed in AD.
 
 **Instructions:**  
-Right-clicked `_ADMINS` → New User. Created a new admin account, set a password, and added it to the Domain Admins group. Logged out and signed in with the new admin account.
+Right-click `_ADMINS` → New User. Create a new admin account, set a password, and add it to the Domain Admins group. Log out and log back in as the new admin.
 
-![14  Created a new user in admins](https://github.com/user-attachments/assets/224292fd-e691-4670-9fe6-b48a0c67e593)
-![15  Created a new user in admins  2](https://github.com/user-attachments/assets/406690bf-9898-4ae3-8dbd-8521963285a5)
-![16  Create a Password](https://github.com/user-attachments/assets/dce1b4e9-bd1c-4ce9-baf6-4b68a50827f1)
-![17  Right click username, member of, Add](https://github.com/user-attachments/assets/dbd0610e-f69c-407e-a80d-9f5049f03fdd)
-![18  Type in Domain Admins, Check names, Then OK, APPLY, OK](https://github.com/user-attachments/assets/a7c5a992-0709-49ae-8b88-ccc2ea020855)
-![19  Login as the new admin account](https://github.com/user-attachments/assets/c7063b75-9644-4776-be0e-448160260dae)
+![14  Created a new user in admins](https://github.com/user-attachments/assets/224292fd-e691-4670-9fe6-b48a0c67e593)  
+*Create a new user account in the `_ADMINS` OU.*
+
+![15  Created a new user in admins  2](https://github.com/user-attachments/assets/406690bf-9898-4ae3-8dbd-8521963285a5)  
+*Confirm the new user has been created.*
+
+![16  Create a Password](https://github.com/user-attachments/assets/dce1b4e9-bd1c-4ce9-baf6-4b68a50827f1)  
+*Set a secure password for the admin account.*
+
+![17  Right click username, member of, Add](https://github.com/user-attachments/assets/dbd0610e-f69c-407e-a80d-9f5049f03fdd)  
+*Open Properties → Member Of to add the user to groups.*
+
+![18  Type in Domain Admins, Check names, Then OK, APPLY, OK](https://github.com/user-attachments/assets/a7c5a992-0709-49ae-8b88-ccc2ea020855)  
+*Add the user to the Domain Admins group.*
+
+![19  Login as the new admin account](https://github.com/user-attachments/assets/c7063b75-9644-4776-be0e-448160260dae)  
+*Log in as the new admin to confirm permissions.*
 
 ---
 
 ## 5. Joining Client to Domain
 
 **Explanation:**  
-Joining a client to the domain allows the computer to be managed centrally and gives users the ability to log in using their domain credentials. The client must use the domain controller's IP as its DNS server so it can locate the domain. This step demonstrates how computers connect to and communicate with the Active Directory domain.
+Joining a client computer to the domain allows centralized management. The client must use the domain controller's IP for DNS so it can locate the domain. After joining, the computer can be managed via AD and users can log in with domain credentials.
 
 **Instructions:**  
-On CLIENT1 VM: Start → System → Rename PC → Change → Domain → Enter `mydomain.com`. Enter admin credentials, allow restart, and confirm domain membership.
+On CLIENT1 VM: Start → System → Rename PC → Change → Domain → Enter `mydomain.com`. Enter admin credentials, allow restart, and confirm the computer joined the domain.
 
-![20  Login into CLient-1 vm and right click start menu and click system](https://github.com/user-attachments/assets/93b4c7a7-40f9-48c7-a6e6-3b3bbc95f7be)
-![21   Click rename this pc advanced then under computer name chick change](https://github.com/user-attachments/assets/c03c613c-e906-4d72-8c6b-cd2e87fb5284)
-![22  joining the client into the Domain Click domain and type in mydomaincom](https://github.com/user-attachments/assets/8f65876a-d1f1-47b5-bfb1-f574ce632a2c)
-![23  Enter the admins username and password and OK then restart](https://github.com/user-attachments/assets/42aa0773-da54-43f8-b200-41ad1dcda2bb)
-![24  Admin is now added to the domain](https://github.com/user-attachments/assets/0113fa73-2c02-4cc0-ab77-43864c9e7aea)
+![20  Login into CLient-1 vm and right click start menu and click system](https://github.com/user-attachments/assets/93b4c7a7-40f9-48c7-a6e6-3b3bbc95f7be)  
+*Open System settings on CLIENT1 to begin joining the domain.*
+
+![21   Click rename this pc advanced then under computer name chick change](https://github.com/user-attachments/assets/c03c613c-e906-4d72-8c6b-cd2e87fb5284)  
+*Select "Change" under Computer Name to join the domain.*
+
+![22  joining the client into the Domain Click domain and type in mydomaincom](https://github.com/user-attachments/assets/8f65876a-d1f1-47b5-bfb1-f574ce632a2c)  
+*Enter the domain name to join the client to the domain.*
+
+![23  Enter the admins username and password and OK then restart](https://github.com/user-attachments/assets/42aa0773-da54-43f8-b200-41ad1dcda2bb)  
+*Provide admin credentials and restart the client.*
+
+![24  Admin is now added to the domain](https://github.com/user-attachments/assets/0113fa73-2c02-4cc0-ab77-43864c9e7aea)  
+*Verify that the client successfully joined the domain.*
 
 ---
 
-## 6. Client Organizational Unit Management
-
-**Explanation:**  
-Placing client computers into an OU helps organize machines and allows Group Policies to be applied to groups of computers. `_CLIENTS` will contain all client machines, keeping the directory structured and making policy management easier.
-
-**Instructions:**  
-On DC1, created `_CLIENTS` OU and moved client computers into it.
-
-![25  make a new organizational unit in dc1 users and computers drag clients computers to new client folder](https://github.com/user-attachments/assets/d8532513-937b-43f6-9be4-11b4bae58082)
-
----
-
-## 7. Remote Desktop Configuration
-
-**Explanation:**  
-Configuring Remote Desktop access for domain users allows authorized users to connect to the client computer. By adding the Domain Users group, anyone in the domain can log in, demonstrating how permissions are applied and managed centrally.
-
-**Instructions:**  
-On CLIENT1 VM: Start → System → Remote Desktop → Add `Domain Users` → Check Names → Apply.
-
-![26  log into the CLIENT vm as the admin user](https://github.com/user-attachments/assets/8641e28d-81a9-4e95-8dad-ee9261e9319c)
-![27  Start System Remote desktop](https://github.com/user-attachments/assets/f87e1a7f-3428-4f33-b954-0b288923024b)
-![28  Select users that can remotely access this pc](https://github.com/user-attachments/assets/3b205ad6-3244-4347-b404-fdba334625f8)
-![29  type in domain users then check names](https://github.com/user-attachments/assets/0660c5c4-9f4c-4588-b6fa-e6ac9d057cca)
-
----
-
-## 8. Bulk User Creation via PowerShell
-
-**Explanation:**  
-Using PowerShell to create multiple users automates account creation and saves time. This simulates real-world scenarios where large numbers of employees need to be added to a domain at once. It also shows scripting skills combined with Active Directory knowledge.
-
-**Instructions:**  
-On DC1: Run PowerShell ISE as administrator, paste the script to create 1,000 users, and execute.
-
-![30  Open Powershell ISE as administrator in DC1 and paste script](https://github.com/user-attachments/assets/8838e600-8566-4a38-805f-75369e8befa0)
-![31  Press the play start button and allow the script to run to create 1000 users](https://github.com/user-attachments/assets/42e8a7c6-22fe-4df5-a398-a4b94de42d8)
-
----
-
-## 9. Testing Employee Logins
-
-**Explanation:**  
-Logging in with newly created users ensures the accounts were added correctly and that replication to client machines is functioning. This step also confirms that users can authenticate and access resources in the domain.
-
-**Instructions:**  
-Log into CLIENT1 with a user created by the script.
-
-![32  choose an employee that was created by the script](https://github.com/user-attachments/assets/aa5f47f7-b119-48b2-bafc-320bfccd1440)
-![33  Log into the CLIENT1 with one of the created accounts](https://github.com/user-attachments/assets/8154dc97-22db-44a4-bc0d-409c133d0b9f)
-![34  Log into the CLIENT1 with one of the created accounts](https://github.com/user-attachments/assets/e1c3089f-7688-4592-9e2e-a56754e17fff)
-![35  ban wel is succesfully logged in](https://github.com/user-attachments/assets/921bd09f-736d-46c4-84af-9b06b260045c)
