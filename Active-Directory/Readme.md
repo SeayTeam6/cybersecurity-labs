@@ -132,7 +132,7 @@ Logged into the domain server virtual machine and installed the Active Directory
 
 # Active Directory Azure Lab
 
-This lab demonstrates the deployment and configuration of an Active Directory domain in Microsoft Azure. It includes centralized authentication, Group Policy security enforcement, domain user creation, and client onboarding. The lab environment reflects practical skills used in IT administration and security.
+This lab demonstrates how to deploy and configure an Active Directory domain in Microsoft Azure. Active Directory (AD) is a system used to manage users, computers, and resources in a network. In this lab, we will create a domain controller, join a client computer to the domain, create users and organizational units, and apply security settings. Each step includes explanations so that even someone unfamiliar with AD or Azure can understand the purpose and process.
 
 ---
 
@@ -142,7 +142,7 @@ This lab demonstrates the deployment and configuration of an Active Directory do
 - Configure DNS and join a Windows client to the domain  
 - Create Organizational Units for administrative and employee separation  
 - Provision standard and privileged user accounts  
-- Automate bulk account creation using PowerShell  
+- Automate bulk user creation using PowerShell  
 - Configure Group Policy security settings  
 - Apply and validate account lockout enforcement  
 - Perform account unlocks and password resets for users
@@ -154,10 +154,10 @@ This lab demonstrates the deployment and configuration of an Active Directory do
 ## 1. Azure Environment Setup
 
 **Explanation:**  
-This step sets up the cloud infrastructure for the lab. Creating a resource group, virtual network, and subnet in Azure establishes the environment needed for the domain controller and client. Assigning a static IP to the server and configuring DNS for the client ensures proper connectivity.
+Before we can use Active Directory, we need a virtual environment in the cloud. A resource group in Azure is a container for all the resources we will create, like virtual networks and virtual machines (VMs). A virtual network acts like a private network in Azure where our servers and clients can communicate. Assigning a static IP ensures that the domain server always has the same address, which is important for DNS resolution. Disabling the firewall temporarily allows us to test connectivity.
 
 **Instructions:**  
-Created a resource group, virtual network, and subnet in Azure. Deployed a Windows Server VM as the domain server, assigned a static private IP, and disabled the firewall for testing connectivity. Deployed a second Windows VM as the client in the same region and virtual network. Configured its DNS settings to point to the domain server's private IP. Restarted the client and verified connectivity by pinging the domain server and checking DNS in PowerShell.
+Created a resource group, virtual network, and subnet in Azure. Deployed a Windows Server VM as the domain server, assigned it a static private IP, and disabled the firewall for testing connectivity. Deployed a second Windows VM as the client in the same region and virtual network. Configured its DNS settings to point to the domain server's private IP. Restarted the client and verified connectivity by pinging the domain server and checking DNS in PowerShell.
 
 ![1  Turned off firewalls in domain VM](https://github.com/user-attachments/assets/6cbed85a-dcd9-47da-b589-ad1d1e624041)
 ![2  Set Client VM DNS settings to the Domain VMs private address](https://github.com/user-attachments/assets/d574b3d8-7797-46cd-9751-d2232c62db43)
@@ -168,10 +168,10 @@ Created a resource group, virtual network, and subnet in Azure. Deployed a Windo
 ## 2. Installing Active Directory
 
 **Explanation:**  
-Installing Active Directory Domain Services on the server creates the domain environment. Promoting the server to a domain controller establishes a functional forest and allows client machines to join the domain.
+Active Directory Domain Services (AD DS) is the component that allows you to create a domain, which is a centralized way to manage users and computers. A domain controller (DC) is the server that holds the directory database and handles authentication requests. A forest is the top-level container for one or more domains. By installing AD DS and promoting the server to a domain controller, we are creating the main server that will manage users and computers in this lab.
 
 **Instructions:**  
-Logged into the domain server VM and installed the Active Directory Domain Services role. Promoted the server to a domain controller and created a new forest named `mydomain.com`. After configuration, restarted the server and logged in using the domain account `mydomain.com\labuser`.
+Logged into the domain server VM and installed the Active Directory Domain Services role. Promoted the server to a domain controller and created a new forest named `mydomain.com`. Restarted the server and logged in using the domain account `mydomain.com\labuser`.
 
 ### Start menu, Server Manager
 ![4  go to the domain server press start menu and click server manager](https://github.com/user-attachments/assets/cca9644f-34e5-4707-90bf-79ef1d4fae9b)
@@ -192,10 +192,10 @@ Logged into the domain server VM and installed the Active Directory Domain Servi
 ## 3. Active Directory Users and Organizational Units
 
 **Explanation:**  
-Organizational Units provide structure for user and computer management. Creating `_EMPLOYEES` and `_ADMINS` OUs separates standard users from administrative accounts, reflecting best practices in access management.
+Organizational Units (OUs) are containers within a domain that help organize users, groups, and computers. They allow administrators to apply policies to specific sets of users or computers. In this lab, `_EMPLOYEES` will hold regular users, and `_ADMINS` will hold administrative accounts. This structure makes management easier and reflects common practices in professional environments.
 
 **Instructions:**  
-After logging back in, opened Active Directory Users and Computers. Right-clicked `Mydomain.com` then selected New → Organizational Unit. Created `_EMPLOYEES` for standard users and `_ADMINS` for admin accounts.
+Opened Active Directory Users and Computers. Right-clicked `Mydomain.com` → New → Organizational Unit. Created `_EMPLOYEES` for standard users and `_ADMINS` for administrative users.
 
 ![10  Active directory Users and computers](https://github.com/user-attachments/assets/3c1f6fa1-52c9-4144-b55f-2e788719b2fe)
 ![11  File New Organizational Unit](https://github.com/user-attachments/assets/07721769-b375-4090-8757-3a4916c9f259)
@@ -207,7 +207,7 @@ After logging back in, opened Active Directory Users and Computers. Right-clicke
 ## 4. Admin User Creation
 
 **Explanation:**  
-Creating a domain admin account demonstrates management of privileged access. Assigning Domain Admin rights allows full control over the domain while the `_ADMINS` OU maintains organization.
+Creating a user in Active Directory allows that user to log in and access domain resources. Admin accounts have higher privileges and can manage the domain. Adding a user to the Domain Admins group gives them administrative rights across the domain. This demonstrates user management and privilege assignment.
 
 **Instructions:**  
 Right-clicked `_ADMINS` → New User. Created a new admin account, set a password, and added it to the Domain Admins group. Logged out and signed in with the new admin account.
@@ -224,7 +224,7 @@ Right-clicked `_ADMINS` → New User. Created a new admin account, set a passwor
 ## 5. Joining Client to Domain
 
 **Explanation:**  
-Joining the client VM to the domain demonstrates how devices integrate into Active Directory. This step also tests DNS configuration and confirms the domain controller is reachable.
+Joining a client to the domain allows the computer to be managed centrally and gives users the ability to log in using their domain credentials. The client must use the domain controller's IP as its DNS server so it can locate the domain. This step demonstrates how computers connect to and communicate with the Active Directory domain.
 
 **Instructions:**  
 On CLIENT1 VM: Start → System → Rename PC → Change → Domain → Enter `mydomain.com`. Enter admin credentials, allow restart, and confirm domain membership.
@@ -240,7 +240,7 @@ On CLIENT1 VM: Start → System → Rename PC → Change → Domain → Enter `m
 ## 6. Client Organizational Unit Management
 
 **Explanation:**  
-Creating a `_CLIENTS` OU and organizing machines into it allows easier policy application and keeps the directory structured. This is useful for managing multiple devices in a domain.
+Placing client computers into an OU helps organize machines and allows Group Policies to be applied to groups of computers. `_CLIENTS` will contain all client machines, keeping the directory structured and making policy management easier.
 
 **Instructions:**  
 On DC1, created `_CLIENTS` OU and moved client computers into it.
@@ -252,7 +252,7 @@ On DC1, created `_CLIENTS` OU and moved client computers into it.
 ## 7. Remote Desktop Configuration
 
 **Explanation:**  
-Configuring Remote Desktop access for domain users demonstrates workstation management and access control. This ensures proper permissions are applied to allow secure logins.
+Configuring Remote Desktop access for domain users allows authorized users to connect to the client computer. By adding the Domain Users group, anyone in the domain can log in, demonstrating how permissions are applied and managed centrally.
 
 **Instructions:**  
 On CLIENT1 VM: Start → System → Remote Desktop → Add `Domain Users` → Check Names → Apply.
@@ -267,10 +267,10 @@ On CLIENT1 VM: Start → System → Remote Desktop → Add `Domain Users` → Ch
 ## 8. Bulk User Creation via PowerShell
 
 **Explanation:**  
-Using a PowerShell script to create 1,000 users demonstrates automation and efficiency in user provisioning. This practice mirrors real-world scenarios where bulk onboarding is needed.
+Using PowerShell to create multiple users automates account creation and saves time. This simulates real-world scenarios where large numbers of employees need to be added to a domain at once. It also shows scripting skills combined with Active Directory knowledge.
 
 **Instructions:**  
-On DC1: Run PowerShell ISE as administrator, paste the script to create users, and execute.
+On DC1: Run PowerShell ISE as administrator, paste the script to create 1,000 users, and execute.
 
 ![30  Open Powershell ISE as administrator in DC1 and paste script](https://github.com/user-attachments/assets/8838e600-8566-4a38-805f-75369e8befa0)
 ![31  Press the play start button and allow the script to run to create 1000 users](https://github.com/user-attachments/assets/42e8a7c6-22fe-4df5-a398-a4b94de42d8)
@@ -280,7 +280,7 @@ On DC1: Run PowerShell ISE as administrator, paste the script to create users, a
 ## 9. Testing Employee Logins
 
 **Explanation:**  
-Logging in as newly created users confirms that accounts were provisioned correctly and that the domain replication is functioning. It also verifies that standard users can access client machines.
+Logging in with newly created users ensures the accounts were added correctly and that replication to client machines is functioning. This step also confirms that users can authenticate and access resources in the domain.
 
 **Instructions:**  
 Log into CLIENT1 with a user created by the script.
@@ -289,46 +289,3 @@ Log into CLIENT1 with a user created by the script.
 ![33  Log into the CLIENT1 with one of the created accounts](https://github.com/user-attachments/assets/8154dc97-22db-44a4-bc0d-409c133d0b9f)
 ![34  Log into the CLIENT1 with one of the created accounts](https://github.com/user-attachments/assets/e1c3089f-7688-4592-9e2e-a56754e17fff)
 ![35  ban wel is succesfully logged in](https://github.com/user-attachments/assets/921bd09f-736d-46c4-84af-9b06b260045c)
-
----
-
-## 10. Group Policy Account Lockout
-
-**Explanation:**  
-Setting an account lockout policy improves security by preventing repeated login attempts. This step demonstrates configuring Group Policy and enforcing security settings.
-
-**Instructions:**  
-On DC1: Run `gpmc.msc` → Default Domain Policy → Edit → Computer Configuration → Policies → Windows Settings → Security Settings → Account Policies → Account Lockout Policy → Set threshold to 5. Force policy update on CLIENT1 using `gpupdate /force`.
-
-![36  set up an Account Lockout policy in Active Directory using the Group Policy Management Console](https://github.com/user-attachments/assets/ab9cadfd-10f9-4bed-a963-4672a5027561)
-![37  Right click Default domain policy then click edit](https://github.com/user-attachments/assets/dc070bda-ecb9-463a-ac10-d63cdae015ae)
-![38  Computer configuration - policies-windos settings-security settings- account policies- account lockout policy then click threshhold and set to 5](https://github.com/user-attachments/assets/9b9b5adb-7a47-419e-a15d-0d21c7628c18)
-![39  force the domain policy to update using command line in client 1](https://github.com/user-attachments/assets/38f3dfe0-99be-4239-9868-b1019268770e)
-
----
-
-## 11. Testing and Resolving Lockouts
-
-**Explanation:**  
-Testing lockouts confirms that the policy is active. Unlocking accounts shows the process for restoring access and demonstrates account management skills.
-
-**Instructions:**  
-Log out of admin account → log in as user and fail login to trigger lockout. On DC1: ADUC → Find account → Properties → Unlock account → Apply. Verify login success.
-
-![40  Now logout of the admin client and log back into CLIENT1 using the new user and  fail to login to force a lockout](https://github.com/user-attachments/assets/35e07d1d-14be-43f9-a390-6f619669f9d8)
-![41  Locked out](https://github.com/user-attachments/assets/7008c529-3f66-42e8-8a19-78e285a06f1)
-![43  unlock the account](https://github.com/user-attachments/assets/3a92ff1f-7e03-4279-91f9-1158d5ed9fc1)
-![44  Logged in](https://github.com/user-attachments/assets/f6bb05ac-14ed-4c44-871a-a5889d8a4767)
-![45  Ran whoami comandline in powershell to show that i have logged in](https://github.com/user-attachments/assets/49979cea-8205-4738-897a-0a1df9791a26)
-
----
-
-## 12. Resetting User Passwords
-
-**Explanation:**  
-Resetting passwords is a common administrative task that maintains account security. This step demonstrates the ability to manage user credentials in Active Directory.
-
-**Instructions:**  
-On DC1: ADUC → Find user → Reset password.
-
-![47  Reset password](https://github.com/user-attachments/assets/b073ad40-408f-41ff-955d-a30659bd4cd8)
