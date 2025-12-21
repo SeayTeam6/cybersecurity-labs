@@ -117,6 +117,7 @@ Logged into the domain server virtual machine and installed the Active Directory
 ## Go back to the Domain Controller, go to Active Directory Users and Computers right click "mydomain". click "find" and type in the locked out account's name and click "Find Now". Click the account at the bottom. A properties tab will appear, click "Account" and Check "Unlock account. This account is currently locked out of the Active Directory Domain Controller" then press "Apply". Now log in with that formerly locked out account and the account should now be unlocked and accessible. 
 <img width="1137" height="630" alt="43  unlock the account" src="https://github.com/user-attachments/assets/3a92ff1f-7e03-4279-91f9-1158d5ed9fc1" />
 <img width="613" height="573" alt="44  Logged in" src="https://github.com/user-attachments/assets/f6bb05ac-14ed-4c44-871a-a5889d8a4767" />
+<img width="518" height="198" alt="45  Ran whoami comandline in powershell to show that i have logged in" src="https://github.com/user-attachments/assets/49979cea-8205-4738-897a-0a1df9791a26" />
 
 
 
