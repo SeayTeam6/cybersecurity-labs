@@ -119,6 +119,8 @@ Logged into the domain server virtual machine and installed the Active Directory
 <img width="613" height="573" alt="44  Logged in" src="https://github.com/user-attachments/assets/f6bb05ac-14ed-4c44-871a-a5889d8a4767" />
 <img width="518" height="198" alt="45  Ran whoami comandline in powershell to show that i have logged in" src="https://github.com/user-attachments/assets/49979cea-8205-4738-897a-0a1df9791a26" />
 
+## Reset a accounts password by going to ADUC mydomain right click find type in the user account find now click the account and reset password.
+<img width="518" height="386" alt="47  Reset password" src="https://github.com/user-attachments/assets/b073ad40-408f-41ff-955d-a30659bd4cd8" />
 
 
 
