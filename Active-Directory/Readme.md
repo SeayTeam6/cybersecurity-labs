@@ -131,6 +131,9 @@ Logged into the domain server virtual machine and installed the Active Directory
 ## Type in account name and click "Find Next". Logs will be highlighted of that account with information of the log at the bottom screen. Each time you click "Find Next" it finds a new log associated with that account. Here shows a log showing a logout event.
 <img width="860" height="970" alt="50  Type in account name and click Find Next  Logs will be highlighted of that account with information of the log at the bottom screen" src="https://github.com/user-attachments/assets/ea8afd34-3e10-4418-a541-6ba55ad2c30a" />
 
+## Now I will be viewing event logs associated with the failed log in attempts in CLIENT1. I am signed into the "focu.xax" account, however I will run the eventviewer as administrator as the admin account jane_admin. When in eventviewer I click "Windows Logs" , Security, and the "Audit Failure" Logs will show the failed login attempts with information of the event at the bottom showing details like the time, date, account name, endpoint the event happened on, etc.  
+<img width="1099" height="1015" alt="51  Log of failed login in event viewer" src="https://github.com/user-attachments/assets/17e64e07-2c0f-4f52-8e96-47a5df0ef8c0" />
+
 
 
 
