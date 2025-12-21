@@ -97,6 +97,9 @@ Logged into the domain server virtual machine and installed the Active Directory
 ## New user that was created by the script (ban.wel) is successfully logged in. 
 <img width="611" height="443" alt="35  ban wel is succesfully logged in" src="https://github.com/user-attachments/assets/921bd09f-736d-46c4-84af-9b06b260045c" />
 
+## Now I will set up an Account Lockout policy in Active Directory using the Group Policy Management Console (GPMSC). Run (Win+R) Enter gpmc.msc
+<img width="412" height="225" alt="36  set up an Account Lockout policy in Active Directory using the Group Policy Management Console" src="https://github.com/user-attachments/assets/ab9cadfd-10f9-4bed-a963-4672a5027561" />
+
 
 
 
