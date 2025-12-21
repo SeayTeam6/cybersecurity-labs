@@ -109,6 +109,13 @@ Logged into the domain server virtual machine and installed the Active Directory
 ## Log into Client-1 as your first admin (Mine is jane_admin) to force this new Account Lockout Group Policy to update. Running the command line as administrator we will run gpupdate /force to force the update. Next we will run gpgupdate /r to see the results of the update. Now you can see the time and date of the policy and which specific policy was updated.
 <img width="628" height="976" alt="39  force the domain policy to update using command line in client 1" src="https://github.com/user-attachments/assets/38f3dfe0-99be-4239-9868-b1019268770e" />
 
+## Now logout of the admin Client1 VM and log back into CLIENT1 using the new user and  fail to login to force a lockout
+<img width="453" height="409" alt="40  Now logout of the admin client and log back into CLIENT1 using the new user and  fail to login to force a lockout" src="https://github.com/user-attachments/assets/35e07d1d-14be-43f9-a390-6f619669f9d8" />
+
+<img width="557" height="145" alt="41  Locked out" src="https://github.com/user-attachments/assets/7008c529-3f66-42e8-8a19-78e285a06f1b" />
+
+
+
 
 
 
