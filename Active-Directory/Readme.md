@@ -132,19 +132,19 @@ Logged into the domain server virtual machine and installed the Active Directory
 
 # Active Directory Azure Lab
 
-This lab demonstrates the deployment and configuration of an **enterprise-style Active Directory domain in Microsoft Azure**, including centralized authentication, Group Policy security enforcement, domain user provisioning, and Windows client onboarding. The environment mirrors real-world identity management workflows found in corporate networks and showcases skills relevant to system administration, security, and identity management roles.
+This lab demonstrates the deployment and configuration of an Active Directory domain in Microsoft Azure. It includes centralized authentication, Group Policy security enforcement, domain user creation, and client onboarding. The lab environment reflects practical skills used in IT administration and security.
 
 ---
 
 ## Objectives
 
-- Deploy a Windows Server domain controller in Azure
-- Configure DNS and join a Windows client to the domain
-- Create Organizational Units for administrative and employee separation
-- Provision standard and privileged user accounts
-- Automate bulk account creation using PowerShell
-- Configure Group Policy security settings
-- Apply and validate account lockout enforcement
+- Deploy a Windows Server domain controller in Azure  
+- Configure DNS and join a Windows client to the domain  
+- Create Organizational Units for administrative and employee separation  
+- Provision standard and privileged user accounts  
+- Automate bulk account creation using PowerShell  
+- Configure Group Policy security settings  
+- Apply and validate account lockout enforcement  
 - Perform account unlocks and password resets for users
 
 ---
@@ -153,11 +153,11 @@ This lab demonstrates the deployment and configuration of an **enterprise-style 
 
 ## 1. Azure Environment Setup
 
-**Purpose / Skills Demonstrated:**  
-Setting up a resource group, virtual network, and subnet in Azure mirrors real-world cloud infrastructure provisioning. This demonstrates proficiency with Azure IaaS, networking, and preparing an environment for enterprise Active Directory deployment.
+**Explanation:**  
+This step sets up the cloud infrastructure for the lab. Creating a resource group, virtual network, and subnet in Azure establishes the environment needed for the domain controller and client. Assigning a static IP to the server and configuring DNS for the client ensures proper connectivity.
 
 **Instructions:**  
-Created a resource group, virtual network, and subnet in Azure, followed that up by deploying a Windows Server VM that will act as the domain server. Assigned it a static private IP and disabled the firewall for connectivity testing. Deployed a second Windows Virtual Machine to act as the Client in the same region and virtual network. Its DNS settings are pointed to the Domain Server's private IP. Restarted the VM and verified connectivity by pinging the Domain Server and confirming its DNS configuration in PowerShell.
+Created a resource group, virtual network, and subnet in Azure. Deployed a Windows Server VM as the domain server, assigned a static private IP, and disabled the firewall for testing connectivity. Deployed a second Windows VM as the client in the same region and virtual network. Configured its DNS settings to point to the domain server's private IP. Restarted the client and verified connectivity by pinging the domain server and checking DNS in PowerShell.
 
 ![1  Turned off firewalls in domain VM](https://github.com/user-attachments/assets/6cbed85a-dcd9-47da-b589-ad1d1e624041)
 ![2  Set Client VM DNS settings to the Domain VMs private address](https://github.com/user-attachments/assets/d574b3d8-7797-46cd-9751-d2232c62db43)
@@ -167,11 +167,11 @@ Created a resource group, virtual network, and subnet in Azure, followed that up
 
 ## 2. Installing Active Directory
 
-**Purpose / Skills Demonstrated:**  
-Installing Active Directory Domain Services and promoting a server to a domain controller shows mastery of Windows Server administration, domain architecture, and forest creation. These are core skills for system administrators and security engineers.
+**Explanation:**  
+Installing Active Directory Domain Services on the server creates the domain environment. Promoting the server to a domain controller establishes a functional forest and allows client machines to join the domain.
 
 **Instructions:**  
-Logged into the domain server VM and installed the Active Directory Domain Services role. Promoted the server to a domain controller by creating a new forest named `mydomain.com`. After configuration, restarted the machine and logged in using the domain account `mydomain.com\labuser`.
+Logged into the domain server VM and installed the Active Directory Domain Services role. Promoted the server to a domain controller and created a new forest named `mydomain.com`. After configuration, restarted the server and logged in using the domain account `mydomain.com\labuser`.
 
 ### Start menu, Server Manager
 ![4  go to the domain server press start menu and click server manager](https://github.com/user-attachments/assets/cca9644f-34e5-4707-90bf-79ef1d4fae9b)
@@ -191,11 +191,11 @@ Logged into the domain server VM and installed the Active Directory Domain Servi
 
 ## 3. Active Directory Users and Organizational Units
 
-**Purpose / Skills Demonstrated:**  
-Creating OUs (_EMPLOYEES, _ADMINS) teaches organizational hierarchy in AD, delegation of administrative rights, and structured user management. This mirrors enterprise best practices.
+**Explanation:**  
+Organizational Units provide structure for user and computer management. Creating `_EMPLOYEES` and `_ADMINS` OUs separates standard users from administrative accounts, reflecting best practices in access management.
 
 **Instructions:**  
-After logging back in post-installation, searched for Active Directory Users and Computers via Start menu. Right-clicked `Mydomain.com` → New → Organizational Unit. Created `_EMPLOYEES` for standard users, and `_ADMINS` for privileged accounts.
+After logging back in, opened Active Directory Users and Computers. Right-clicked `Mydomain.com` then selected New → Organizational Unit. Created `_EMPLOYEES` for standard users and `_ADMINS` for admin accounts.
 
 ![10  Active directory Users and computers](https://github.com/user-attachments/assets/3c1f6fa1-52c9-4144-b55f-2e788719b2fe)
 ![11  File New Organizational Unit](https://github.com/user-attachments/assets/07721769-b375-4090-8757-3a4916c9f259)
@@ -206,11 +206,11 @@ After logging back in post-installation, searched for Active Directory Users and
 
 ## 4. Admin User Creation
 
-**Purpose / Skills Demonstrated:**  
-Creating a domain admin account teaches account lifecycle management and privilege assignment. Assigning Domain Admin rights demonstrates understanding of access control and role-based permissions.
+**Explanation:**  
+Creating a domain admin account demonstrates management of privileged access. Assigning Domain Admin rights allows full control over the domain while the `_ADMINS` OU maintains organization.
 
 **Instructions:**  
-Right-clicked `_ADMINS` → New User. Created an admin account, set password, and added it to the **Domain Admins** group. Logged out and signed in using the new admin account.
+Right-clicked `_ADMINS` → New User. Created a new admin account, set a password, and added it to the Domain Admins group. Logged out and signed in with the new admin account.
 
 ![14  Created a new user in admins](https://github.com/user-attachments/assets/224292fd-e691-4670-9fe6-b48a0c67e593)
 ![15  Created a new user in admins  2](https://github.com/user-attachments/assets/406690bf-9898-4ae3-8dbd-8521963285a5)
@@ -223,11 +223,11 @@ Right-clicked `_ADMINS` → New User. Created an admin account, set password, an
 
 ## 5. Joining Client to Domain
 
-**Purpose / Skills Demonstrated:**  
-Domain-joining a client shows knowledge of DNS, Active Directory replication, and workstation management. This mirrors enterprise deployment scenarios.
+**Explanation:**  
+Joining the client VM to the domain demonstrates how devices integrate into Active Directory. This step also tests DNS configuration and confirms the domain controller is reachable.
 
 **Instructions:**  
-On CLIENT1 VM: Start Menu → System → Rename PC → Change → Click Domain → Enter `mydomain.com`. Enter admin credentials, allow restart, and confirm domain join.
+On CLIENT1 VM: Start → System → Rename PC → Change → Domain → Enter `mydomain.com`. Enter admin credentials, allow restart, and confirm domain membership.
 
 ![20  Login into CLient-1 vm and right click start menu and click system](https://github.com/user-attachments/assets/93b4c7a7-40f9-48c7-a6e6-3b3bbc95f7be)
 ![21   Click rename this pc advanced then under computer name chick change](https://github.com/user-attachments/assets/c03c613c-e906-4d72-8c6b-cd2e87fb5284)
@@ -239,8 +239,8 @@ On CLIENT1 VM: Start Menu → System → Rename PC → Change → Click Domain �
 
 ## 6. Client Organizational Unit Management
 
-**Purpose / Skills Demonstrated:**  
-Organizing client machines in OUs mirrors enterprise device management and enforces policy application via GPOs.
+**Explanation:**  
+Creating a `_CLIENTS` OU and organizing machines into it allows easier policy application and keeps the directory structured. This is useful for managing multiple devices in a domain.
 
 **Instructions:**  
 On DC1, created `_CLIENTS` OU and moved client computers into it.
@@ -251,8 +251,8 @@ On DC1, created `_CLIENTS` OU and moved client computers into it.
 
 ## 7. Remote Desktop Configuration
 
-**Purpose / Skills Demonstrated:**  
-Assigning RDP access to domain users demonstrates workstation access management and permission control.
+**Explanation:**  
+Configuring Remote Desktop access for domain users demonstrates workstation management and access control. This ensures proper permissions are applied to allow secure logins.
 
 **Instructions:**  
 On CLIENT1 VM: Start → System → Remote Desktop → Add `Domain Users` → Check Names → Apply.
@@ -266,11 +266,11 @@ On CLIENT1 VM: Start → System → Remote Desktop → Add `Domain Users` → Ch
 
 ## 8. Bulk User Creation via PowerShell
 
-**Purpose / Skills Demonstrated:**  
-Automating account creation demonstrates scripting, scalability, and enterprise onboarding processes.
+**Explanation:**  
+Using a PowerShell script to create 1,000 users demonstrates automation and efficiency in user provisioning. This practice mirrors real-world scenarios where bulk onboarding is needed.
 
 **Instructions:**  
-On DC1: Run PowerShell ISE as administrator, paste script to create 1,000 employee accounts, and execute.
+On DC1: Run PowerShell ISE as administrator, paste the script to create users, and execute.
 
 ![30  Open Powershell ISE as administrator in DC1 and paste script](https://github.com/user-attachments/assets/8838e600-8566-4a38-805f-75369e8befa0)
 ![31  Press the play start button and allow the script to run to create 1000 users](https://github.com/user-attachments/assets/42e8a7c6-22fe-4df5-a398-a4b94de42d8)
@@ -279,8 +279,8 @@ On DC1: Run PowerShell ISE as administrator, paste script to create 1,000 employ
 
 ## 9. Testing Employee Logins
 
-**Purpose / Skills Demonstrated:**  
-Verifying logins demonstrates identity lifecycle management and correct AD replication to clients.
+**Explanation:**  
+Logging in as newly created users confirms that accounts were provisioned correctly and that the domain replication is functioning. It also verifies that standard users can access client machines.
 
 **Instructions:**  
 Log into CLIENT1 with a user created by the script.
@@ -292,13 +292,13 @@ Log into CLIENT1 with a user created by the script.
 
 ---
 
-## 10. Group Policy – Account Lockout
+## 10. Group Policy Account Lockout
 
-**Purpose / Skills Demonstrated:**  
-Configuring account lockout policies demonstrates security enforcement, policy management, and compliance practices.
+**Explanation:**  
+Setting an account lockout policy improves security by preventing repeated login attempts. This step demonstrates configuring Group Policy and enforcing security settings.
 
 **Instructions:**  
-On DC1: Run `gpmc.msc` → Default Domain Policy → Edit → Computer Configuration → Policies → Windows Settings → Security Settings → Account Policies → Account Lockout Policy → Set threshold to 5. Force update on CLIENT1 using `gpupdate /force`.
+On DC1: Run `gpmc.msc` → Default Domain Policy → Edit → Computer Configuration → Policies → Windows Settings → Security Settings → Account Policies → Account Lockout Policy → Set threshold to 5. Force policy update on CLIENT1 using `gpupdate /force`.
 
 ![36  set up an Account Lockout policy in Active Directory using the Group Policy Management Console](https://github.com/user-attachments/assets/ab9cadfd-10f9-4bed-a963-4672a5027561)
 ![37  Right click Default domain policy then click edit](https://github.com/user-attachments/assets/dc070bda-ecb9-463a-ac10-d63cdae015ae)
@@ -309,11 +309,11 @@ On DC1: Run `gpmc.msc` → Default Domain Policy → Edit → Computer Configura
 
 ## 11. Testing and Resolving Lockouts
 
-**Purpose / Skills Demonstrated:**  
-Simulating failed logins and unlocking accounts teaches incident response, troubleshooting, and service desk workflows.
+**Explanation:**  
+Testing lockouts confirms that the policy is active. Unlocking accounts shows the process for restoring access and demonstrates account management skills.
 
 **Instructions:**  
-Log out of admin → log in as new user and fail login to trigger lockout. On DC1: ADUC → Find account → Properties → Unlock account → Apply. Verify login success.
+Log out of admin account → log in as user and fail login to trigger lockout. On DC1: ADUC → Find account → Properties → Unlock account → Apply. Verify login success.
 
 ![40  Now logout of the admin client and log back into CLIENT1 using the new user and  fail to login to force a lockout](https://github.com/user-attachments/assets/35e07d1d-14be-43f9-a390-6f619669f9d8)
 ![41  Locked out](https://github.com/user-attachments/assets/7008c529-3f66-42e8-8a19-78e285a06f1)
@@ -325,8 +325,8 @@ Log out of admin → log in as new user and fail login to trigger lockout. On DC
 
 ## 12. Resetting User Passwords
 
-**Purpose / Skills Demonstrated:**  
-Resetting passwords demonstrates identity lifecycle management and Tier 1/2 administrative operations.
+**Explanation:**  
+Resetting passwords is a common administrative task that maintains account security. This step demonstrates the ability to manage user credentials in Active Directory.
 
 **Instructions:**  
 On DC1: ADUC → Find user → Reset password.
