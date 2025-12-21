@@ -106,6 +106,10 @@ Logged into the domain server virtual machine and installed the Active Directory
 ##  Computer Configuration - Policies-Windows Settings-Security Settings- Account Policies- Account lockout Policy then click threshhold and set to 5. 5 login attempts will trigger a lockout
 <img width="866" height="694" alt="38  Computer configuration - policies-windos settings-security settings- account policies- account lockout policy then click threshhold and set to 5" src="https://github.com/user-attachments/assets/9b9b5adb-7a47-419e-a15d-0d21c7628c18" />
 
+## Log into Client-1 as your first admin (Mine is jane_admin) to force this new Account Lockout Group Policy to update. Running the command line as administrator we will run gpupdate /force to force the update. Next we will run gpgupdate /r to see the results of the update. Now you can see the time and date of the policy and which specific policy was updated.
+<img width="628" height="976" alt="39  force the domain policy to update using command line in client 1" src="https://github.com/user-attachments/assets/38f3dfe0-99be-4239-9868-b1019268770e" />
+
+
 
 
 
