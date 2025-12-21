@@ -100,6 +100,17 @@ Logged into the domain server virtual machine and installed the Active Directory
 ## Now I will set up an Account Lockout policy in Active Directory using the Group Policy Management Console (GPMSC). Run (Win+R) Enter gpmc.msc
 <img width="412" height="225" alt="36  set up an Account Lockout policy in Active Directory using the Group Policy Management Console" src="https://github.com/user-attachments/assets/ab9cadfd-10f9-4bed-a963-4672a5027561" />
 
+##  Right click Default domain policy then click edit
+<img width="749" height="531" alt="37  Right click Default domain policy then click edit" src="https://github.com/user-attachments/assets/dc070bda-ecb9-463a-ac10-d63cdae015ae" />
+
+##  Computer Configuration - Policies-Windows Settings-Security Settings- Account Policies- Account lockout Policy then click threshhold and set to 5. 5 login attempts will trigger a lockout
+<img width="866" height="694" alt="38  Computer configuration - policies-windos settings-security settings- account policies- account lockout policy then click threshhold and set to 5" src="https://github.com/user-
+attachments/assets/6dde7460-4cbd-4614-a95c-3f09fa678a43" />
+
+
+
+
+
 
 
 
