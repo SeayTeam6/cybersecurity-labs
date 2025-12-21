@@ -114,8 +114,10 @@ Logged into the domain server virtual machine and installed the Active Directory
 
 <img width="557" height="145" alt="41  Locked out" src="https://github.com/user-attachments/assets/7008c529-3f66-42e8-8a19-78e285a06f1b" />
 
-## Go back to the Domain Controller, go to Active Directory Users and Computers right click "mydomain". click "find" and type in the locked out account's name and click "Find Now". Click the account at the bottom. A properties tab will appear, click "Account" and Check "Unlock account. This account is currently locked out of the Active Directory Domain Controller" then press "Apply"
+## Go back to the Domain Controller, go to Active Directory Users and Computers right click "mydomain". click "find" and type in the locked out account's name and click "Find Now". Click the account at the bottom. A properties tab will appear, click "Account" and Check "Unlock account. This account is currently locked out of the Active Directory Domain Controller" then press "Apply". Now log in with that formerly locked out account and the account should now be unlocked and accessible. 
 <img width="1137" height="630" alt="43  unlock the account" src="https://github.com/user-attachments/assets/3a92ff1f-7e03-4279-91f9-1158d5ed9fc1" />
+<img width="613" height="573" alt="44  Logged in" src="https://github.com/user-attachments/assets/f6bb05ac-14ed-4c44-871a-a5889d8a4767" />
+
 
 
 
