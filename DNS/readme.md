@@ -30,6 +30,14 @@ In this lab I focused on basic DNS name resolution inside of an Active Directory
 ## flushed dns, and pinged mainframe and see the ip has been updated
 <img width="859" height="728" alt="9  flushed dns, and pinged mainframe and see the ip has been updated" src="https://github.com/user-attachments/assets/7291ec65-93be-4c40-9637-98234e54ebbd" />
 
+## 10. In dns manager create a new alias
+<img width="859" height="501" alt="10  In dns manager create a new alias" src="https://github.com/user-attachments/assets/bda32f89-e55b-4c6a-9153-906f90dc2155" />
+
+## Alias name is search and the qualified domain i chose is google.com
+<img width="682" height="493" alt="11  Alias name is search and the qualified domain i chose is googlecom" src="https://github.com/user-attachments/assets/e8aed99d-f205-41bd-a98a-4c76d6e8825d" />
+
+
+
 
 
 
