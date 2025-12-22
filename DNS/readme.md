@@ -36,6 +36,8 @@ In this lab I focused on basic DNS name resolution inside of an Active Directory
 ## Alias name is search and the qualified domain i chose is google.com
 <img width="682" height="493" alt="11  Alias name is search and the qualified domain i chose is googlecom" src="https://github.com/user-attachments/assets/e8aed99d-f205-41bd-a98a-4c76d6e8825d" />
 
+## 
+
 
 
 
