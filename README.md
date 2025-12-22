@@ -4,6 +4,7 @@ Hands-on labs from Cybrary SOC Analyst and Security+ training, including SIEM da
 [Azure Storage Account – File Upload & Cost Management Lab](azure-storage-lab/)
 
 [Azure Network Traffic Analysis & Firewall Configuration Lab](azure-network-traffic-analysis-lab/)
+
 [VPN, IP, and Location](VPN-IP-And-Location)
 
 [OS Ticket Lab - Enviornment Setup and Ticket Resolution](OSTicket-Lab)
