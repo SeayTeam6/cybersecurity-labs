@@ -10,3 +10,5 @@ Hands-on labs from Cybrary SOC Analyst and Security+ training, including SIEM da
 [Active Directory Lab](Active-Directory)
 
 [DNS Active Directory Name Resolution](DNS)
+
+[Network File Shares and Permissions](Network-File-Shares-And-Permissions)
