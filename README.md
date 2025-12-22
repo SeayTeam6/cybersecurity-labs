@@ -9,4 +9,4 @@ Hands-on labs from Cybrary SOC Analyst and Security+ training, including SIEM da
 
 [Active Directory Lab](Active-Directory)
 
-[DNS](DNS)
+[DNS Active Directory Name Resolution](DNS)
