@@ -17,6 +17,22 @@ To start this lab in splunk as the Administrator I will be demostrating Users an
 ## User roles have been allocated
 <img width="1091" height="402" alt="7  user roles have been allocated" src="https://github.com/user-attachments/assets/38f6bf18-90cb-43c2-86f5-096ecf59cbb1" />
 
+## Logged in with both new users that have a User Role and a Power Role. Both roles have their available permissions shown via the settings tab.
+
+## User ROle
+<img width="1087" height="531" alt="8  User role user signed in showing permissions" src="https://github.com/user-attachments/assets/39c4abba-416c-417e-ab5b-d47fe3f430f4" />
+
+## Power Role
+<img width="1077" height="393" alt="9  Power role user signed in showing permissions" src="https://github.com/user-attachments/assets/51c80b2b-d9ee-4f4e-87cb-416891e9dcff" />
+
+## Part 2
+I will be indexing data into my splunk deployment. I will be going over the splunk index time process. Also looking into options available for me to add data into my splunk deployment, and then indexing training data
+
+## Splunk Index Time Process
+
+
+
+
 
 
 
