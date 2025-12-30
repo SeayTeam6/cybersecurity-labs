@@ -11,7 +11,9 @@ To start this lab in splunk as the Administrator I will be demostrating Users an
 
 ## creating the new user with its role as Power selected
 <img width="1117" height="582" alt="5  sign up power role" src="https://github.com/user-attachments/assets/55e7ba3d-8d2a-4ca3-a0cc-503e8996b421" />
+
 <img width="941" height="668" alt="6  sign up power role2" src="https://github.com/user-attachments/assets/11f285cc-4ef6-47fc-b8e9-831709b509a1" />
+<img width="1091" height="402" alt="7  user roles have been allocated" src="https://github.com/user-attachments/assets/38f6bf18-90cb-43c2-86f5-096ecf59cbb1" />
 
 
 
