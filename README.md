@@ -1,14 +1,9 @@
 # Cybersecurity & IT Infrastructure Labs
 
 ## 📖 About This Repository
-This portfolio demonstrates hands-on cybersecurity and IT infrastructure skills 
-developed through structured lab environments. Each project simulates real-world 
+This portfolio demonstrates hands on cybersecurity and IT infrastructure skills 
+developed through structured lab environments. Each project simulates real world 
 enterprise scenarios for IT support, cloud security, and SOC operations.
-
-##  Who This Is For
-- Hiring managers evaluating technical proficiency
-- IT professionals reviewing practical skills
-- Students learning cybersecurity fundamentals
 
 ##  Technical Skills Demonstrated
 
