@@ -27,7 +27,7 @@ enterprise scenarios for IT support, cloud security, and SOC operations.
 
 | Project | Skills | Tools Used |
 |---------|--------|------------|
-| [Azure Storage Lab]azure-storage-lab/) | Cloud storage, cost optimization | Azure Portal, Blob Storage |
+| [Azure Storage Lab](azure-storage-lab/) | Cloud storage, cost optimization | Azure Portal, Blob Storage |
 | [Network Security Lab](azure-network-traffic-analysis-lab/) | Firewall rules, traffic analysis | Azure Firewall, Monitor |
 | [Active Directory Lab](Active-Directory) | User management, OUs, GPO | Windows Server 2019 |
 | [DNS Configuration Lab](DNS) | Name resolution, zone management | Windows DNS Server |
@@ -40,8 +40,8 @@ enterprise scenarios for IT support, cloud security, and SOC operations.
 ##  Certifications & Training
 - **CompTIA Security+** (Obtained 2025)
 - **Linux Essentials** (In Progress)
-- **Azure-900 (In Progress)
-- **AWS Cloud Practintioner (In Progress)
+- ** Azure-900 (In Progress)
+- * AWS Cloud Practintioner (In Progress)
 
 ##  Quick Start
 Each lab folder contains:
